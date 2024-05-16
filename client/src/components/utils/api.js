@@ -2,7 +2,7 @@ import axios from "axios";
 import jwt_decode from "jwt-decode";
 
 const api = axios.create({
-  baseURL:  "http://localhost:8000/",
+  baseURL:  "https://todoserver-six.vercel.app/",
   headers: {
     "Content-Type": "application/json",
   },
@@ -12,7 +12,7 @@ const refreshToken = async () => {
   const refreshToken = JSON.parse(localStorage.getItem("mern-task-management/user")).refreshToken;
   try {
     const { data } = await axios.post(
-      `http://localhost:8000/api/auth/refresh_token`,
+      `https://todoserver-six.vercel.app/api/auth/refresh_token`,
       {
         token: refreshToken,
       }
