@@ -9,14 +9,14 @@ const mongoose = require("mongoose");
 const app = express();
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://todoclient-nine.vercel.app",
   })
 );
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 mongoose.set("strictQuery", true);
-mongoose.connect("mongodb://localhost:27017/project", {
+mongoose.connect("mongodb+srv://projecttodo:18881888@todocluster.cdn5y6a.mongodb.net/?retryWrites=true&w=majority&appName=todocluster", {
   useNewUrlParser: true,
   family: 4,
 });
